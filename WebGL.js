@@ -5,11 +5,11 @@ class WebGL {
 
   initializeContext() {
     this.canvas.id = "webgl-canvas"
-    this.ctx = this.canvas.getContext('webgl')
+    this.ctx = this.canvas.getContext('webgl', {preserveDrawingBuffer: true})
 
     if (!this.ctx) {
       alert('WebGL not supported')
-      this.ctx = this.canvas.getContext('experimental-webgl')
+      this.ctx = this.canvas.getContext('experimental-webgl', {preserveDrawingBuffer: true})
     }
 
     document.body.appendChild(this.canvas)
